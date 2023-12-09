@@ -360,20 +360,20 @@
                                 }
                             }
                             if (statename == "Tamilnadu") {
-                                if (salary < 3500) {
+                                if (salary < 7000) {
                                     professionaltax = "0";
                                 }
-                                else if (salary >= 3501 && salary <= 5000) {
-                                    professionaltax = "16.6";
+                                else if (salary >= 7001 && salary <= 10000) {
+                                    professionaltax = "115";
                                 }
-                                else if (salary >= 5001 && salary <= 10000) {
-                                    professionaltax = "85";
+                                else if (salary >= 10001 && salary <= 11000) {
+                                    professionaltax = "171";
                                 }
-                                else if (salary >= 10001 && salary <= 12500) {
-                                    professionaltax = "126.67";
+                                else if (salary >= 11001 && salary <= 12000) {
+                                    professionaltax = "171";
                                 }
-                                else if (salary >= 12501) {
-                                    professionaltax = "182.50";
+                                else if (salary >= 12001) {
+                                    professionaltax = "208";
                                 }
                             }
                             if (statename == "karnataka") {

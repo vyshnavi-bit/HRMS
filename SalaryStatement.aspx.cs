@@ -1469,6 +1469,10 @@ public partial class SalaryStatement : System.Web.UI.Page
                                     BasicSAL = (gainsal * 50) / 100;
                                     double CONALLAWANCE = 1600;
                                     double perdayconveyance = CONALLAWANCE / 15;
+                                    if (lop == 15)
+                                    {
+                                        lop = 1;
+                                    }
                                     double loseofconviyance = lop * perdayconveyance;
                                     double MEDICALALLAWANCE = 1250;
                                     double perdayMEDICALALLAWANCE = MEDICALALLAWANCE / 15;
@@ -1544,25 +1548,25 @@ public partial class SalaryStatement : System.Web.UI.Page
                                 }
                                 if (statename == "Tamilnadu")
                                 {
-                                    if (totalearnings < 3500)
+                                    if (totalearnings < 7000)
                                     {
                                         profitionaltax = 0;
                                     }
-                                    else if (totalearnings >= 3501 && totalearnings <= 5000)
+                                    else if (totalearnings >= 7001 && totalearnings <= 10000)
                                     {
-                                        profitionaltax = 16.6;
+                                        profitionaltax = 115;
                                     }
-                                    else if (totalearnings >= 5001 && totalearnings <= 10000)
+                                    else if (totalearnings >= 10001 && totalearnings <= 11000)
                                     {
-                                        profitionaltax = 85;
+                                        profitionaltax = 171;
                                     }
-                                    else if (totalearnings >= 10001 && totalearnings <= 12500)
+                                    else if (totalearnings >= 11001 && totalearnings <= 12000)
                                     {
-                                        profitionaltax = 126.67;
+                                        profitionaltax = 171;
                                     }
-                                    else if (totalearnings >= 12501)
+                                    else if (totalearnings >= 12001)
                                     {
-                                        profitionaltax = 182.50;
+                                        profitionaltax = 208;
                                     }
                                 }
                                 if (statename == "karnataka")

@@ -7899,29 +7899,25 @@ public class EmployeeManagementHandler : IHttpHandler, IRequiresSessionState
                             }
                             if (statename == "Tamilnadu")
                             {
-                                if (salary < 3500)
+                                if (salary < 7000)
                                 {
                                     professionaltax = 0;
                                 }
-                                else if (salary >= 3501 && salary <= 5000)
+                                else if (salary >= 7001 && salary <= 10000)
                                 {
-                                    professionaltax = 16.6;
+                                    professionaltax = 115;
                                 }
-                                else if (salary >= 5001 && salary <= 9000)
+                                else if (salary >= 10001 && salary <= 11000)
                                 {
-                                    professionaltax = 40;
+                                    professionaltax = 171;
                                 }
-                                else if (salary >= 9001 && salary <= 10000)
+                                else if (salary >= 11001 && salary <= 12000)
                                 {
-                                    professionaltax = 85;
+                                    professionaltax = 171;
                                 }
-                                else if (salary >= 10001 && salary <= 12500)
+                                else if (salary >= 12001)
                                 {
-                                    professionaltax = 126.67;
-                                }
-                                else if (salary >= 12501)
-                                {
-                                    professionaltax = 182.50;
+                                    professionaltax = 208;
                                 }
                             }
                             if (statename == "karnataka")
@@ -8028,25 +8024,25 @@ public class EmployeeManagementHandler : IHttpHandler, IRequiresSessionState
                             }
                             if (statename == "Tamilnadu")
                             {
-                                if (msal < 3500)
+                                if (msal < 7000)
                                 {
                                     professionaltax = 0;
                                 }
-                                else if (msal >= 3501 && msal <= 5000)
+                                else if (msal >= 7001 && msal <= 10000)
                                 {
-                                    professionaltax = 16.6;
+                                    professionaltax = 115;
                                 }
-                                else if (msal >= 5001 && msal <= 10000)
+                                else if (msal >= 10001 && msal <= 11000)
                                 {
-                                    professionaltax = 85;
+                                    professionaltax = 171;
                                 }
-                                else if (msal >= 10001 && msal <= 12500)
+                                else if (msal >= 11001 && msal <= 12000)
                                 {
-                                    professionaltax = 126.67;
+                                    professionaltax = 171;
                                 }
-                                else if (msal >= 12501)
+                                else if (msal >= 12001)
                                 {
-                                    professionaltax = 182.50;
+                                    professionaltax = 208;
                                 }
                             }
                             if (statename == "karnataka")
@@ -10030,27 +10026,30 @@ public class EmployeeManagementHandler : IHttpHandler, IRequiresSessionState
                 getdeductiondetailes.fullname = dr["fullname"].ToString();
                 if (mainbranch == "6")
                 {
-                    cmd = new SqlCommand("select fromdate,todate from branchmaster where branchid=@ebranchid");
-                    cmd.Parameters.Add("@ebranchid", empbid);
-                    DataTable dtdates = vdm.SelectQuery(cmd).Tables[0];
-                    if (dtdates.Rows.Count > 0)
-                    {
-                        int cmonth = Convert.ToInt32(month);
-                        int cyear = Convert.ToInt32(year);
-                        int prasentdate = Convert.ToInt32(dtdates.Rows[0]["todate"].ToString());
-                        dttodate = new DateTime(cyear, cmonth, prasentdate);
-                        DateTime dtmonthfrom = dttodate.AddMonths(-1);
-                        string mnthfrmdate = dtmonthfrom.ToString("MM/dd/yyyy");
-                        int lastmonth = Convert.ToInt32(dtdates.Rows[0]["fromdate"].ToString());
-                        string[] strfrom = mnthfrmdate.Split('/');
-                        int years = Convert.ToInt32(strfrom[2]);
-                        int months = Convert.ToInt32(strfrom[0]);
-                        dtfromdate = new DateTime(years, months, prasentdate);
-                        TimeSpan t = dttodate - dtfromdate;
-                        int NrOfDays = int.Parse(t.TotalDays.ToString());
-                        // double NrOfDays = t.TotalDays;
-                        getdeductiondetailes.monthdays = NrOfDays.ToString();
-                    }
+                    //cmd = new SqlCommand("select fromdate,todate from branchmaster where branchid=@ebranchid");
+                    //cmd.Parameters.Add("@ebranchid", empbid);
+                    //DataTable dtdates = vdm.SelectQuery(cmd).Tables[0];
+                    //if (dtdates.Rows.Count > 0)
+                    //{
+                    //    int cmonth = Convert.ToInt32(month);
+                    //    int cyear = Convert.ToInt32(year);
+                    //    int prasentdate = Convert.ToInt32(dtdates.Rows[0]["todate"].ToString());
+                    //    dttodate = new DateTime(cyear, cmonth+1, prasentdate);
+                    //    //DateTime dtmonthfrom = dtfromdate;
+                    //    //string mnthfrmdate = dtmonthfrom.ToString("MM/dd/yyyy");
+                    //    //int lastmonth = Convert.ToInt32(dtdates.Rows[0]["fromdate"].ToString());
+                    //    //string[] strfrom = mnthfrmdate.Split('/');
+                    //    //int years = Convert.ToInt32(strfrom[2]);
+                    //    //int months = Convert.ToInt32(strfrom[0]);
+                    //    dtfromdate = new DateTime(cyear, cmonth, prasentdate);
+                    //    TimeSpan t = dttodate - dtfromdate;
+                    //    int NrOfDays = int.Parse(t.TotalDays.ToString());
+                    //    // double NrOfDays = t.TotalDays;
+                    //    getdeductiondetailes.monthdays = NrOfDays.ToString();
+                    //}
+                    int days = System.DateTime.DaysInMonth(Convert.ToInt32(year), Convert.ToInt32(month));
+                    getdeductiondetailes.numberofworkingdays = days.ToString();
+                    getdeductiondetailes.monthdays = days.ToString();
                 }
                 else
                 {
@@ -20209,25 +20208,25 @@ catch
                                             }
                                             if (statename == "Tamilnadu")
                                             {
-                                                if (totalearnings < 3500)
+                                                if (totalearnings < 7000)
                                                 {
                                                     profitionaltax = 0;
                                                 }
-                                                else if (totalearnings >= 3501 && totalearnings <= 5000)
+                                                else if (totalearnings >= 7001 && totalearnings <= 10000)
                                                 {
-                                                    profitionaltax = 16.6;
+                                                    profitionaltax = 115;
                                                 }
-                                                else if (totalearnings >= 5001 && totalearnings <= 10000)
+                                                else if (totalearnings >= 10001 && totalearnings <= 11000)
                                                 {
-                                                    profitionaltax = 85;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 10001 && totalearnings <= 12500)
+                                                else if (totalearnings >= 11001 && totalearnings <= 12000)
                                                 {
-                                                    profitionaltax = 126.67;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 12501)
+                                                else if (totalearnings >= 12001)
                                                 {
-                                                    profitionaltax = 182.50;
+                                                    profitionaltax = 208;
                                                 }
                                             }
                                             if (statename == "karnataka")
@@ -21175,25 +21174,25 @@ catch
                                             }
                                             if (statename == "Tamilnadu")
                                             {
-                                                if (totalearnings < 3500)
+                                                if (totalearnings < 7000)
                                                 {
                                                     profitionaltax = 0;
                                                 }
-                                                else if (totalearnings >= 3501 && totalearnings <= 5000)
+                                                else if (totalearnings >= 7001 && totalearnings <= 10000)
                                                 {
-                                                    profitionaltax = 16.6;
+                                                    profitionaltax = 115;
                                                 }
-                                                else if (totalearnings >= 5001 && totalearnings <= 10000)
+                                                else if (totalearnings >= 10001 && totalearnings <= 11000)
                                                 {
-                                                    profitionaltax = 85;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 10001 && totalearnings <= 12500)
+                                                else if (totalearnings >= 11001 && totalearnings <= 12000)
                                                 {
-                                                    profitionaltax = 126.67;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 12501)
+                                                else if (totalearnings >= 12001)
                                                 {
-                                                    profitionaltax = 182.50;
+                                                    profitionaltax = 208;
                                                 }
                                             }
                                             if (statename == "karnataka")
@@ -22380,25 +22379,25 @@ catch
                                             }
                                             if (statename == "Tamilnadu")
                                             {
-                                                if (totalearnings < 3500)
+                                                if (totalearnings < 7000)
                                                 {
                                                     profitionaltax = 0;
                                                 }
-                                                else if (totalearnings >= 3501 && totalearnings <= 5000)
+                                                else if (totalearnings >= 7001 && totalearnings <= 10000)
                                                 {
-                                                    profitionaltax = 16.6;
+                                                    profitionaltax = 115;
                                                 }
-                                                else if (totalearnings >= 5001 && totalearnings <= 10000)
+                                                else if (totalearnings >= 10001 && totalearnings <= 11000)
                                                 {
-                                                    profitionaltax = 85;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 10001 && totalearnings <= 12500)
+                                                else if (totalearnings >= 11001 && totalearnings <= 12000)
                                                 {
-                                                    profitionaltax = 126.67;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 12501)
+                                                else if (totalearnings >= 12001)
                                                 {
-                                                    profitionaltax = 182.50;
+                                                    profitionaltax = 208;
                                                 }
                                             }
                                             if (statename == "karnataka")
@@ -23346,25 +23345,25 @@ catch
                                             }
                                             if (statename == "Tamilnadu")
                                             {
-                                                if (totalearnings < 3500)
+                                                if (totalearnings < 7000)
                                                 {
                                                     profitionaltax = 0;
                                                 }
-                                                else if (totalearnings >= 3501 && totalearnings <= 5000)
+                                                else if (totalearnings >= 7001 && totalearnings <= 10000)
                                                 {
-                                                    profitionaltax = 16.6;
+                                                    profitionaltax = 115;
                                                 }
-                                                else if (totalearnings >= 5001 && totalearnings <= 10000)
+                                                else if (totalearnings >= 10001 && totalearnings <= 11000)
                                                 {
-                                                    profitionaltax = 85;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 10001 && totalearnings <= 12500)
+                                                else if (totalearnings >= 11001 && totalearnings <= 12000)
                                                 {
-                                                    profitionaltax = 126.67;
+                                                    profitionaltax = 171;
                                                 }
-                                                else if (totalearnings >= 12501)
+                                                else if (totalearnings >= 12001)
                                                 {
-                                                    profitionaltax = 182.50;
+                                                    profitionaltax = 208;
                                                 }
                                             }
                                             if (statename == "karnataka")

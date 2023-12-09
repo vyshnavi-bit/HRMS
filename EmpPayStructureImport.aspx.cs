@@ -207,25 +207,25 @@ public partial class EmpPayStructureImport : System.Web.UI.Page
                         }
                         if (statename == "Tamilnadu")
                         {
-                            if (gross < 3500)
+                            if (gross < 7000)
                             {
                                 professionaltax = "0";
                             }
-                            else if (gross >= 3501 && gross <= 5000)
+                            else if (gross >= 7001 && gross <= 10000)
                             {
-                                professionaltax = "16.6";
+                                professionaltax = "115";
                             }
-                            else if (gross >= 5001 && gross <= 10000)
+                            else if (gross >= 10001 && gross <= 11000)
                             {
-                                professionaltax = "85";
+                                professionaltax = "171";
                             }
-                            else if (gross >= 10001 && gross <= 12500)
+                            else if (gross >= 11001 && gross <= 1200)
                             {
-                                professionaltax = "126.67";
+                                professionaltax = "171";
                             }
-                            else if (gross >= 12501)
+                            else if (gross >= 12001)
                             {
-                                professionaltax = "182.50";
+                                professionaltax = "208";
                             }
                         }
                         if (statename == "karnataka")

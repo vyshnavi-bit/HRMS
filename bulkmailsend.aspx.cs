@@ -713,25 +713,25 @@ public partial class bulkmailsend : System.Web.UI.Page
                                             }
                                             if (statename == "Tamilnadu")
                                             {
-                                                if (msal < 3500)
+                                                if (msal < 7000)
                                                 {
                                                     professionaltax = 0;
                                                 }
-                                                else if (msal >= 3501 && msal <= 5000)
+                                                else if (msal >= 7001 && msal <= 10000)
                                                 {
-                                                    professionaltax = 16.6;
+                                                    professionaltax = 115;
                                                 }
-                                                else if (msal >= 5001 && msal <= 10000)
+                                                else if (msal >= 10001 && msal <= 11000)
                                                 {
-                                                    professionaltax = 85;
+                                                    professionaltax = 171;
                                                 }
-                                                else if (msal >= 10001 && msal <= 12500)
+                                                else if (msal >= 11001 && msal <= 12000)
                                                 {
-                                                    professionaltax = 126.67;
+                                                    professionaltax = 171;
                                                 }
-                                                else if (msal >= 12501)
+                                                else if (msal >= 12001)
                                                 {
-                                                    professionaltax = 182.50;
+                                                    professionaltax = 208;
                                                 }
                                             }
                                             if (statename == "karnataka")
@@ -979,25 +979,25 @@ public partial class bulkmailsend : System.Web.UI.Page
                                             }
                                             if (statename == "Tamilnadu")
                                             {
-                                                if (msal < 3500)
+                                                if (msal < 7000)
                                                 {
                                                     professionaltax = 0;
                                                 }
-                                                else if (msal >= 3501 && msal <= 5000)
+                                                else if (msal >= 7001 && msal <= 10000)
                                                 {
-                                                    professionaltax = 16.6;
+                                                    professionaltax = 115;
                                                 }
-                                                else if (msal >= 5001 && msal <= 10000)
+                                                else if (msal >= 10001 && msal <= 11000)
                                                 {
-                                                    professionaltax = 85;
+                                                    professionaltax = 171;
                                                 }
-                                                else if (msal >= 10001 && msal <= 12500)
+                                                else if (msal >= 11001 && msal <= 12000)
                                                 {
-                                                    professionaltax = 126.67;
+                                                    professionaltax = 171;
                                                 }
-                                                else if (msal >= 12501)
+                                                else if (msal >= 12001)
                                                 {
-                                                    professionaltax = 182.50;
+                                                    professionaltax = 208;
                                                 }
                                             }
                                             if (statename == "karnataka")

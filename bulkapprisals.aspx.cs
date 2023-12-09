@@ -191,25 +191,25 @@ public partial class bulkapprisals : System.Web.UI.Page
                     }
                     if (statename == "Tamilnadu")
                     {
-                        if (presentsal < 3500)
+                        if (presentsal < 7000)
                         {
                             professionaltax = 0;
                         }
-                        else if (presentsal >= 3501 && presentsal <= 5000)
+                        else if (presentsal >= 7001 && presentsal <= 10000)
                         {
-                            professionaltax = 16.6;
+                            professionaltax = 115;
                         }
-                        else if (presentsal >= 5001 && presentsal <= 10000)
+                        else if (presentsal >= 10001 && presentsal <= 11000)
                         {
-                            professionaltax = 85;
+                            professionaltax = 171;
                         }
-                        else if (presentsal >= 10001 && presentsal <= 12500)
+                        else if (presentsal >= 11001 && presentsal <= 12000)
                         {
-                            professionaltax = 126.67;
+                            professionaltax = 171;
                         }
-                        else if (presentsal >= 12501)
+                        else if (presentsal >= 12001)
                         {
-                            professionaltax = 182.50;
+                            professionaltax = 208;
                         }
                     }
                     if (statename == "karnataka")
