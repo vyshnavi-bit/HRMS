@@ -1,4 +1,4 @@
-﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeFile="SalaryStatement.aspx.cs" Inherits="SalaryStatement" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true"  validateRequest="false" enableEventValidation="false" CodeFile="SalaryStatement.aspx.cs" Inherits="SalaryStatement" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

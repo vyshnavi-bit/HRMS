@@ -694,6 +694,144 @@ public partial class EditTotalDeduction : System.Web.UI.Page
                         }
                         else
                         {
+                           //// ------ Other dates calculation-----/////
+
+                            //////string frmdate = dr["date"].ToString();
+                            //////DateTime dtPrevmonth = Convert.ToDateTime(frmdate).AddMonths(-1);
+                            //////DateTime dtfrom = Convert.ToDateTime(frmdate);
+                            //////string strdate = dtfrom.ToString("dd/MM/yyyy");
+                            //////string strPrevdate = dtPrevmonth.ToString("dd/MM/yyyy");
+                            //////string[] str = strdate.Split('/');
+                            //////string[] strprev = strPrevdate.Split('/');
+                            //////string bid = "";
+                            //////cmd = new SqlCommand("SELECT employedetails.empid,branchmaster.fromdate, branchmaster.todate FROM employedetails INNER JOIN  branchmaster ON employedetails.branchid = branchmaster.branchid WHERE (employedetails.employee_num = @employee_num)");
+                            //////cmd.Parameters.Add("@employee_num", employee_num);
+                            //////DataTable dtroutes = vdm.SelectQuery(cmd).Tables[0];
+                            //////if (dtroutes.Rows.Count > 0)
+                            //////{
+                            //////    int empid = 0;
+                            //////    int.TryParse(dtroutes.Rows[0]["empid"].ToString(), out empid);
+                            //////    int month = 0;
+                            //////    string year = str[2];
+                            //////    //int yr = 0;
+                            //////    int.TryParse(str[1].ToString(), out month);
+                            //////    double daysinmonth = 0;
+                            //////    string from = dtroutes.Rows[0]["fromdate"].ToString();
+                            //////    string to = dtroutes.Rows[0]["todate"].ToString();
+                            //////    int mnth = month;
+                            //////    int newmonth = month;
+                            //////    month = month - 1;
+                            //////    int prevyear = 0;
+                            //////    int presyear = 0;
+                            //////    int.TryParse(str[2].ToString(), out prevyear);
+                            //////    if (month == 0)
+                            //////    {
+                            //////        month = 12;
+                            //////    }
+                            //////    if (from == "1" || to == "1")
+                            //////    {
+                            //////        month = month + 1;
+
+                            //////        if (month == 12)
+                            //////        {
+                            //////            newmonth = 1;
+                            //////            presyear = prevyear + 1;
+                            //////        }
+                            //////        else
+                            //////        {
+                            //////            if (month == 1)
+                            //////            {
+                            //////                month = 1;
+                            //////            }
+                            //////            newmonth = month + 1;
+                            //////            if (month == 12)
+                            //////            {
+                            //////                newmonth = 1;
+                            //////                presyear = prevyear + 1;
+                            //////            }
+                            //////        }
+                            //////    }
+                            //////    string strfromdate = month + "/" + from + "/" + strprev[2];
+                            //////    string strtodate = newmonth + "/" + to + "/" + str[2];
+                            //////    DateTime dtfromdate = Convert.ToDateTime(strfromdate);
+                            //////    DateTime dttodate = Convert.ToDateTime(strtodate);
+                            //////    TimeSpan days;
+                            //////    days = dttodate - dtfromdate;
+                            //////    daysinmonth = Convert.ToInt32(days.TotalDays);
+                            //////    daysinmonth = Math.Abs(daysinmonth);
+                            //////    double clorwo = 0;
+                            //////    string cl = dr["CL HOLIDAY AND OFF"].ToString();
+                            //////    double nightdays = 0;
+                            //////    double.TryParse(dr["NIGHT ALLOWENCE Days"].ToString(), out nightdays);
+                            //////    if (cl == "")
+                            //////    {
+                            //////        clorwo = 0;
+                            //////    }
+                            //////    else
+                            //////    {
+                            //////        double.TryParse(dr["CL HOLIDAY AND OFF"].ToString(), out clorwo);
+                            //////    }
+                            //////    double numberofworkingdays = 0;
+                            //////    numberofworkingdays = daysinmonth - clorwo;
+                            //////    double paydays = 0;
+                            //////    double lop = 0;
+                            //////    double.TryParse(dr["lop"].ToString(), out lop);
+                            //////    paydays = numberofworkingdays - lop;
+                            //////    double PayableDays = 0;
+                            //////    PayableDays = paydays + clorwo;
+                            //////    double othours = 0;
+                            //////    double.TryParse(dr["OTHours"].ToString(), out othours);
+                            //////    double otdays = 0;
+                            //////    otdays = othours / 8;
+                            //////    otdays = Math.Round(otdays, 2);
+                            //////    string ExtraDays = dr["ExtraDays"].ToString();
+
+                            //////    if (ExtraDays == "")
+                            //////    {
+                            //////        ExtraDays = "0";
+                            //////    }
+                            //////    else
+                            //////    {
+                            //////        ExtraDays = dr["ExtraDays"].ToString();
+                            //////    }
+                            //////    string salaryadvance = dr["SALARY ADVANCE"].ToString();
+                            //////    double saladv = 0;
+                            //////    double.TryParse(dr["SALARY ADVANCE"].ToString(), out saladv);
+                            //////    string mobileamount = dr["MOBILE DEDUCTION"].ToString();
+                            //////    double mobile = 0;
+                            //////    double.TryParse(dr["MOBILE DEDUCTION"].ToString(), out mobile);
+                            //////    string otherdeduction = dr["OTHER DEDUCTION"].ToString();
+                            //////    double deduction = 0;
+                            //////    double.TryParse(dr["OTHER DEDUCTION"].ToString(), out deduction);
+                            //////    string canteenamount = dr["CANTEEN DEDUCTION"].ToString();
+                            //////    double canteen = 0;
+                            //////    double.TryParse(dr["CANTEEN DEDUCTION"].ToString(), out canteen);
+                            //////    string loanamount = dr["OTHER LOAN"].ToString();
+                            //////    double loan = 0;
+                            //////    double.TryParse(dr["OTHER LOAN"].ToString(), out loan);
+                            //////    string presentmonth = "";
+                            //////    if (newmonth <= 9)
+                            //////    {
+                            //////        if (from == "1" || to == "1")
+                            //////        {
+
+                            //////            presentmonth = "0" + month;
+                            //////        }
+                            //////        else
+                            //////        {
+                            //////            presentmonth = "0" + newmonth;
+
+                            //////        }
+                            //////    }
+                            //////    else
+                            //////    {
+                            //////        presentmonth = newmonth.ToString();
+                            //////    }
+                            
+
+                            /////////--------Begin  one to one date salary statement calculation------------
+
+
                             string frmdate = dr["date"].ToString();
                             DateTime dtPrevmonth = Convert.ToDateTime(frmdate).AddMonths(-1);
                             DateTime dtfrom = Convert.ToDateTime(frmdate);
@@ -702,7 +840,6 @@ public partial class EditTotalDeduction : System.Web.UI.Page
                             string[] str = strdate.Split('/');
                             string[] strprev = strPrevdate.Split('/');
                             string bid = "";
-                            //cmd = new SqlCommand("SELECT monthly_attendance.sno, monthly_attendance.empid,monthly_attendance.clorwo, monthly_attendance.doe, monthly_attendance.month, monthly_attendance.year, monthly_attendance.otdays, employedetails.employee_num, branchmaster.fromdate, branchmaster.todate, monthly_attendance.lop, branchmaster.branchid, monthly_attendance.numberofworkingdays FROM  monthly_attendance INNER JOIN  employedetails ON monthly_attendance.empid = employedetails.empid INNER JOIN branchmaster ON employedetails.branchid = branchmaster.branchid WHERE  (monthly_attendance.month = @month) AND (monthly_attendance.year = @year) AND (employedetails.branchid = @branchid)");
                             cmd = new SqlCommand("SELECT employedetails.empid,branchmaster.fromdate, branchmaster.todate FROM employedetails INNER JOIN  branchmaster ON employedetails.branchid = branchmaster.branchid WHERE (employedetails.employee_num = @employee_num)");
                             cmd.Parameters.Add("@employee_num", employee_num);
                             DataTable dtroutes = vdm.SelectQuery(cmd).Tables[0];
@@ -710,61 +847,15 @@ public partial class EditTotalDeduction : System.Web.UI.Page
                             {
                                 int empid = 0;
                                 int.TryParse(dtroutes.Rows[0]["empid"].ToString(), out empid);
-                                int month = 0;
+                                int presentmonth = 0;
                                 string year = str[2];
                                 //int yr = 0;
-                                int.TryParse(str[1].ToString(), out month);
+                                int.TryParse(str[1].ToString(), out presentmonth);
                                 double daysinmonth = 0;
-                                string from = dtroutes.Rows[0]["fromdate"].ToString();
-                                string to = dtroutes.Rows[0]["todate"].ToString();
-                                int mnth = month;
-                                int newmonth = month;
-                                month = month - 1;
-                                int prevyear = 0;
                                 int presyear = 0;
-                                int.TryParse(str[2].ToString(), out prevyear);
-                                if (month == 0)
-                                {
-                                    month = 12;
-                                }
-                                if (from == "1" || to == "1")
-                                {
-                                    month = month + 1;
-                                    //if (month == 12)
-                                    //{
-                                    //    newmonth = 1;
-                                    //}
-                                    //else
-                                    //{
-                                    //    newmonth = month + 1;
-                                    //}
-                                    if (month == 12)
-                                    {
-                                        newmonth = 1;
-                                        presyear = prevyear + 1;
-                                    }
-                                    else
-                                    {
-                                        if (month == 1)
-                                        {
-                                            month = 1;
-                                        }
-                                        newmonth = month + 1;
-                                        if (month == 12)
-                                        {
-                                            newmonth = 1;
-                                            presyear = prevyear + 1;
-                                        }
-                                    }
-                                }
-                                string strfromdate = month + "/" + from + "/" + strprev[2];
-                                string strtodate = newmonth + "/" + to + "/" + str[2];
-                                DateTime dtfromdate = Convert.ToDateTime(strfromdate);
-                                DateTime dttodate = Convert.ToDateTime(strtodate);
-                                TimeSpan days;
-                                days = dttodate - dtfromdate;
-                                daysinmonth = Convert.ToInt32(days.TotalDays);
-                                daysinmonth = Math.Abs(daysinmonth);
+                                int.TryParse(str[2].ToString(), out presyear);
+                                int days = DateTime.DaysInMonth(presyear, presentmonth);
+                                daysinmonth = Math.Abs(days);
                                 double clorwo = 0;
                                 string cl = dr["CL HOLIDAY AND OFF"].ToString();
                                 double nightdays = 0;
@@ -815,24 +906,9 @@ public partial class EditTotalDeduction : System.Web.UI.Page
                                 string loanamount = dr["OTHER LOAN"].ToString();
                                 double loan = 0;
                                 double.TryParse(dr["OTHER LOAN"].ToString(), out loan);
-                                string presentmonth = "";
-                                if (newmonth <= 9)
-                                {
-                                    if (from == "1" || to == "1")
-                                    {
 
-                                        presentmonth = "0" + month;
-                                    }
-                                    else
-                                    {
-                                        presentmonth = "0" + newmonth;
+                                /////////--------End  one to one date salary statement calculation------------
 
-                                    }
-                                }
-                                else
-                                {
-                                    presentmonth = newmonth.ToString();
-                                }
                                 cmd = new SqlCommand("Select lop, otdays, clorwo, ExtraDays, numberofworkingdays from monthly_attendance where empid=@eid and month=@month and year=@year");
                                 cmd.Parameters.Add("@eid", empid);
                                 cmd.Parameters.Add("@month", presentmonth);
