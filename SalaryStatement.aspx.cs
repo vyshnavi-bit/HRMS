@@ -1459,7 +1459,7 @@ public partial class SalaryStatement : System.Web.UI.Page
                                 {
                                     batta = 0;
                                     double GROSSSAL = rateper * 15;
-                                    if (lop > 15)
+                                    if (lop >= 15)
                                     {
                                         lop = lop - 15;
                                     }
