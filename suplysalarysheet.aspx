@@ -176,22 +176,16 @@
                                                 </asp:GridView>
                                             </div>
                                             <br />
-                                            <table style="width: 100%;">
+                                             <table style="width: 100%;">
                                                 <tr>
-                                                    <td style="width: 19%;">
+                                                    <td style="width: 25%;">
                                                         <span style="font-weight: bold; font-size: 12px;">Prepared By</span>
                                                     </td>
-                                                    <td style="width: 19%;">
+                                                    <td style="width: 25%;">
                                                         <span style="font-weight: bold; font-size: 12px;">Audit By</span>
                                                     </td>
-                                                    <td style="width: 19%;">
-                                                        <span style="font-weight: bold; font-size: 12px;">HR.M</span>
-                                                    </td>
                                                     <td style="width: 25%;">
-                                                        <span style="font-weight: bold; font-size: 12px;">A.M</span>
-                                                    </td>
-                                                     <td style="width: 25%;">
-                                                        <span style="font-weight: bold; font-size: 12px;">GM</span>
+                                                        <span style="font-weight: bold; font-size: 12px;">Accounts</span>
                                                     </td>
                                                     <td style="width: 25%;">
                                                         <span style="font-weight: bold; font-size: 12px;">Authorized Signature</span>

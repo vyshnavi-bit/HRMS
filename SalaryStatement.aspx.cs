@@ -1464,22 +1464,19 @@ public partial class SalaryStatement : System.Web.UI.Page
                                         lop = lop - 15;
                                     }
                                     double loss = lop * rateper;
-                                    double gainsal = GROSSSAL - loss;
+                                    double gainsal = GROSSSAL;// - loss;
                                     double BasicSAL = 50;
                                     BasicSAL = (gainsal * 50) / 100;
                                     double CONALLAWANCE = 1600;
-                                    double perdayconveyance = CONALLAWANCE / 15;
-                                    if (lop == 15)
-                                    {
-                                        lop = 1;
-                                    }
-                                    double loseofconviyance = lop * perdayconveyance;
+                                  //  double perdayconveyance = CONALLAWANCE / 15;
+
+                                    double loseofconviyance = 0; // perdayconveyance;
                                     double MEDICALALLAWANCE = 1250;
-                                    double perdayMEDICALALLAWANCE = MEDICALALLAWANCE / 15;
-                                    double loseofMEDICALALLAWANCE = lop * perdayMEDICALALLAWANCE;
+                                  //  double perdayMEDICALALLAWANCE = 0;// MEDICALALLAWANCE / 15;
+                                    double loseofMEDICALALLAWANCE = 0;//  perdayMEDICALALLAWANCE;
                                     double WASHINGALLAWANCE = 1000;
                                     double perdayWASHINGALLAWANCE = WASHINGALLAWANCE / 15;
-                                    double loseofWASHINGALLAWANCE = lop * perdayWASHINGALLAWANCE;
+                                    double loseofWASHINGALLAWANCE = 0;////  perdayWASHINGALLAWANCE;
                                     CONALLAWANCE = Math.Round(CONALLAWANCE - loseofconviyance, 0);
                                     MEDICALALLAWANCE = Math.Round(MEDICALALLAWANCE - loseofMEDICALALLAWANCE, 0);
                                     WASHINGALLAWANCE = Math.Round(WASHINGALLAWANCE - loseofWASHINGALLAWANCE, 0);
@@ -1493,6 +1490,10 @@ public partial class SalaryStatement : System.Web.UI.Page
                                     newrow["CONVEYANCE ALLOWANCE"] = CONALLAWANCE;
                                     newrow["MEDICAL ALLOWANCE"] = MEDICALALLAWANCE;
                                     newrow["WASHING ALLOWANCE"] = WASHINGALLAWANCE;
+                                    if (lop == 15)
+                                    {
+                                        lop = 1;
+                                    }
                                 }
                                 else
                                 {
