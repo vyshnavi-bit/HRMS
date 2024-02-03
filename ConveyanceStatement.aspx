@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true"
-    CodeFile="ConveyanceStatement.aspx.cs" Inherits="ConveyanceStatement" %>
+    CodeFile="ConveyanceStatement.aspx.cs" enableEventValidation="false" Inherits="ConveyanceStatement" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

@@ -192,25 +192,22 @@
                                                 </asp:GridView>
                                             </div>
                                         <br />
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td style="width: 25%;">
-                                                    <span style="font-weight: bold; font-size: 15px;">Prepared By</span>
-                                                </td>
-                                                <td style="width: 25%;">
-                                                    <span style="font-weight: bold; font-size: 15px;">Audit By</span>
-                                                </td>
-                                                <td style="width: 25%;">
-                                                    <span style="font-weight: bold; font-size: 15px;">A.O</span>
-                                                </td>
-                                                <td style="width: 25%;">
-                                                    <span style="font-weight: bold; font-size: 15px;">GM</span>
-                                                </td>
-                                                <td style="width: 25%;">
-                                                    <span style="font-weight: bold; font-size: 15px;">Director</span>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                       <table style="width: 100%;">
+                                                <tr>
+                                                    <td style="width: 25%;">
+                                                        <span style="font-weight: bold; font-size: 12px;">Prepared By</span>
+                                                    </td>
+                                                    <td style="width: 25%;">
+                                                        <span style="font-weight: bold; font-size: 12px;">Audit By</span>
+                                                    </td>
+                                                    <td style="width: 25%;">
+                                                        <span style="font-weight: bold; font-size: 12px;">Accounts</span>
+                                                    </td>
+                                                    <td style="width: 25%;">
+                                                        <span style="font-weight: bold; font-size: 12px;">Authorized Signature</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                     </div>
                                 </div>
                                 <br />

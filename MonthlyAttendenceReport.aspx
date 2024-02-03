@@ -142,8 +142,8 @@
                                             </asp:GridView>
                                         </div>
                                         <br />
-                                        <table style="width: 100%;">
-                                            <tr>
+                                       <table style="width: 100%;">
+                                                <tr>
                                                     <td style="width: 25%;">
                                                         <span style="font-weight: bold; font-size: 12px;">Prepared By</span>
                                                     </td>
@@ -151,16 +151,13 @@
                                                         <span style="font-weight: bold; font-size: 12px;">Audit By</span>
                                                     </td>
                                                     <td style="width: 25%;">
-                                                        <span style="font-weight: bold; font-size: 12px;">A.O</span>
-                                                    </td>
-                                                     <td style="width: 25%;">
-                                                        <span style="font-weight: bold; font-size: 12px;">GM</span>
+                                                        <span style="font-weight: bold; font-size: 12px;">Accounts</span>
                                                     </td>
                                                     <td style="width: 25%;">
-                                                        <span style="font-weight: bold; font-size: 12px;">Director</span>
+                                                        <span style="font-weight: bold; font-size: 12px;">Authorized Signature</span>
                                                     </td>
                                                 </tr>
-                                        </table>
+                                            </table>
                                     </div>
                                 </div>
                                 <br />
