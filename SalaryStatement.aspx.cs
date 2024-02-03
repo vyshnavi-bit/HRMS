@@ -455,7 +455,7 @@ public partial class SalaryStatement : System.Web.UI.Page
                         //if (otherallawance > 0)
                         //{
                         //    newrow["Variable Allowance"] = Math.Round(otherallawance);
-                           
+
                         //}
                         //else
                         //{
@@ -923,7 +923,7 @@ public partial class SalaryStatement : System.Web.UI.Page
                 Report.Columns.Add("CONVEYANCE ALLOWANCE").DataType = typeof(double);
                 Report.Columns.Add("MEDICAL ALLOWANCE").DataType = typeof(double);
                 Report.Columns.Add("WASHING ALLOWANCE").DataType = typeof(double);
-               // Report.Columns.Add("Variable ALLOWANCE").DataType = typeof(double);
+                // Report.Columns.Add("Variable ALLOWANCE").DataType = typeof(double);
                 Report.Columns.Add("Gross Earnings").DataType = typeof(double);
                 Report.Columns.Add("PT").DataType = typeof(double);
                 Report.Columns.Add("PF").DataType = typeof(double);
@@ -1072,7 +1072,7 @@ public partial class SalaryStatement : System.Web.UI.Page
                         //    basic = 35;
                         //    basicsalary = (permonth * 35) / 100;
                         //}
-                        
+
                         double basicpermonth = basicsalary / daysinmonth;
                         double bs = basicpermonth * totalpresentdays;
                         newrow["Basic"] = Math.Round(bs);
@@ -1088,12 +1088,12 @@ public partial class SalaryStatement : System.Web.UI.Page
                         double tt = bs + conve + medical + washing;
                         double thra = permonth - loseamount;
                         double hra = Math.Round(thra - tt);
-                       // double otherallowance = Math.Round(thra - tt);
+                        // double otherallowance = Math.Round(thra - tt);
                         //if (otherallowance > 0)
                         //{
                         //    newrow["Variable Allowance"] = Math.Round(otherallowance);
-                            
-                           
+
+
                         //}
                         //else
                         //{
@@ -1135,7 +1135,7 @@ public partial class SalaryStatement : System.Web.UI.Page
                             newrow["PF"] = providentfund;
                             newrow["EPF"] = Math.Round(providentfund, 0);
                         }
-                       // EESI
+                        // EESI
                         string esieligible = dr["esieligible"].ToString();
                         if (ddlbranch.SelectedItem.Value == "1043" || ddlbranch.SelectedItem.Value == "1055" || ddlbranch.SelectedItem.Value == "1049" || ddlbranch.SelectedItem.Value == "1048" || ddlbranch.SelectedItem.Value == "1047" || ddlbranch.SelectedItem.Value == "1070")
                         {
@@ -1458,33 +1458,54 @@ public partial class SalaryStatement : System.Web.UI.Page
                                 if (ddlbranch.SelectedValue == "6")
                                 {
                                     batta = 0;
-                                    double GROSSSAL = rateper * 15;
+                                    double rateperday = rate + batta;
+                                    totalearnings = rateperday * paydays;
+                                    double totalpdays = numberofworkingdays - lop;
+                                    totalearnings = Math.Round(totalearnings);
+                                    newrow["Gross Earnings"] = totalearnings;
+                                    //  double GROSSSAL = rateper * 15;
                                     if (lop >= 15)
                                     {
                                         lop = lop - 15;
                                     }
-                                    double loss = lop * rateper;
-                                    double gainsal = GROSSSAL;// - loss;
-                                    double BasicSAL = 50;
-                                    BasicSAL = (gainsal * 50) / 100;
+
                                     double CONALLAWANCE = 1600;
-                                  //  double perdayconveyance = CONALLAWANCE / 15;
 
                                     double loseofconviyance = 0; // perdayconveyance;
                                     double MEDICALALLAWANCE = 1250;
-                                  //  double perdayMEDICALALLAWANCE = 0;// MEDICALALLAWANCE / 15;
+                                    //  double perdayMEDICALALLAWANCE = 0;// MEDICALALLAWANCE / 15;
                                     double loseofMEDICALALLAWANCE = 0;//  perdayMEDICALALLAWANCE;
                                     double WASHINGALLAWANCE = 1000;
-                                    double perdayWASHINGALLAWANCE = WASHINGALLAWANCE / 15;
+                                    double totalerngs = 0;
+                                    double gainsal = 0;
+                                    double BasicSAL = 0;
+
+                                    //double rateperday = rate + batta;
+                                    //totalearnings = rateperday * paydays;
+                                    //double totalpdays = numberofworkingdays - lop;
+                                    totalearnings = Math.Round(totalearnings);
+                                    newrow["Gross Earnings"] = totalearnings;
+                                    double loss = lop * rateper;
+                                    gainsal = totalearnings;// - loss;
+                                    BasicSAL = 50;
+                                    BasicSAL = (gainsal * 50) / 100;
+                                    double perdayconveyance = CONALLAWANCE / 15;
+
+                                    loseofconviyance = perdayconveyance;
+                                    MEDICALALLAWANCE = 1250;
+                                    //double perdayMEDICALALLAWANCE = MEDICALALLAWANCE / 15;
+                                    //loseofMEDICALALLAWANCE = perdayMEDICALALLAWANCE;
+                                    WASHINGALLAWANCE = 1000;
+                                 //   double perdayWASHINGALLAWANCE = WASHINGALLAWANCE / 15;
                                     double loseofWASHINGALLAWANCE = 0;////  perdayWASHINGALLAWANCE;
-                                    CONALLAWANCE = Math.Round(CONALLAWANCE - loseofconviyance, 0);
+                                  //  CONALLAWANCE = Math.Round(CONALLAWANCE - loseofconviyance, 0);
                                     MEDICALALLAWANCE = Math.Round(MEDICALALLAWANCE - loseofMEDICALALLAWANCE, 0);
                                     WASHINGALLAWANCE = Math.Round(WASHINGALLAWANCE - loseofWASHINGALLAWANCE, 0);
-                                    double totalerngs = BasicSAL + CONALLAWANCE + MEDICALALLAWANCE + WASHINGALLAWANCE;
+                                    totalerngs = BasicSAL + CONALLAWANCE + MEDICALALLAWANCE + WASHINGALLAWANCE;
                                     double thra = gainsal;
                                     double hra = Math.Round(thra - totalerngs);
                                     double HRA = hra;
-                                    newrow["Gross"] = GROSSSAL;
+                                    newrow["Gross"] = totalearnings;
                                     newrow["Basic"] = BasicSAL;
                                     newrow["HRA"] = HRA;
                                     newrow["CONVEYANCE ALLOWANCE"] = CONALLAWANCE;
@@ -1510,12 +1531,13 @@ public partial class SalaryStatement : System.Web.UI.Page
                                     {
                                         newrow["Batta/Day"] = batta;
                                     }
+
+                                    double rateperday = rate + batta;
+                                    totalearnings = rateperday * paydays;
+                                    double totalpdays = numberofworkingdays - lop;
+                                    totalearnings = Math.Round(totalearnings);
+                                    newrow["Gross Earnings"] = totalearnings;
                                 }
-                                double rateperday = rate + batta;
-                                totalearnings = rateperday * paydays;
-                                double totalpdays = numberofworkingdays - lop;
-                                totalearnings = Math.Round(totalearnings);
-                                newrow["Gross Earnings"] = totalearnings;
                                 string pfeligible = dr["pfeligible"].ToString();
                                 if (pfeligible == "Yes")
                                 {
@@ -2938,5 +2960,5 @@ public partial class SalaryStatement : System.Web.UI.Page
             }
         }
 
-    }  
+    }
 }
